@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tawkify</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="TawkifyCss.css">
+    <script src="TawkifyJS.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Tawkify</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Sign In</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">1(888)494-7280</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="banner">
+    <div class="row">
+        <div class="overlay col-xs-10 col-xs-offset-1">
+            <div class="row">
+                <span>
+                    We'd like to get to know you better. Tell us about yourself and the sort of someone you'd like to meet. Don't worry, no one will see this besides the matchmakers at Tawkify.
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="pagination">
+    <li class="page active" id="li1">ABOUT YOURSELF</li>
+    <li class="page" id="li2">IDEAL PARTNER</li>
+    <li class="page" id="li3">ADD PHOTOS</li>
+</ul>
+
+<form id="slider" method="post" action="createProfile.php">
+    <article class = "article" id="article1">
+        <div class="row">
+            <h2>Tell us a bit about yourself</h2>
+            <p>Tell us a bit about yourself and who you'd like to meet. The more we know, the better. Be candid-this info is for our eyes only. Tawkify profiles and photos will forever be 100% confidential.</p>
+        </div>
+        <div class="row">
+            <div class="form-item col-xs-5 col-xs-offset-2">
+                <div class="row">
+                    <label class="large">YOUR GENDER</label>
+                </div>
+                <div class="row">
+                    <select name="gender" class="dropdown">
+                        <option value="N/A"> </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="small">Select your gender</label>
+                </div>
+            </div>
+
+            <div class="form-item col-xs-5">
+                <div class="row">
+                    <label class="large">YOU ARE SEEKING</label>
+                </div>
+                <div class="row">
+                     <select name="genderSeeking" class="dropdown">
+                        <option value="N/A"> </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Both">Both</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="small">Select the sexual orientation you're seeking</label>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="row">
+            <div class="form-item col-xs-5 col-xs-offset-2">
+                <div class="row">
+                    <label class="large">LOCATION</label>
+                </div>
+                <div class="row">
+                    <input type="text" id="zip" class="form-input" placeholder="zipcode"/>
+                </div>
+                <div class="row">
+                    <label class="small">Where are you located?</label>
+                </div>
+            </div>
+
+            <div class="form-item col-xs-5">
+                <div class="row">
+                    <label class="large">YOUR BIRTHDAY</label>
+                </div>
+                <div class="row">
+                     <input type="text" class="bday" id="month" placeholder="MM" style="width:15%"/>
+                     <input type="text" class="bday" id="day" placeholder="DD" style="width:15%"/>
+                     <input type="text" class="bday" id="year" placeholder="YYYY" style="width:20%"/>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="form-item col-xs-5 col-xs-offset-2">
+            <div class="row">
+                <label class="large">YOUR HEIGHT</label>
+            </div>
+            <div class="row">
+                <select name="gender" class="dropdown">
+                    <option value="N/A"> </option>
+                    <option value="4f1i">4 ft. 1 in.</option>
+                    <option value="4f2i">4 ft. 2 in.</option>
+                    <option value="4f3i">4 ft. 3 in.</option>
+                    <option value="4f4i">4 ft. 4 in.</option>
+                    <option value="4f5i">4 ft. 5 in.</option>
+                    <option value="4f6i">4 ft. 6 in.</option>
+                </select>
+            </div>
+            <div class="row">
+                <label class="small">What is your height?</label>
+            </div>
+        </div>
+
+        <div class="form-item col-xs-5">
+            <div class="row">
+                <label class="large" style="visibility: hidden">test</label>
+            </div>
+            <div class="row">
+                 <label class="binary-choice not-chosen" id="heightYes" value="1" >Yes</label>
+                 <label class="binary-choice chosen" id="heightNo" value="0" >No</label>
+            </div>
+            <div class="row">
+                <label class="small">Is height a factor in your match preferences?</label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-item col-xs-5 col-xs-offset-2">
+            <div class="row">
+                <label class="large" >OCCUPATION</label>
+            </div>
+            <div class="row">
+                <textarea type="text" id="occupation" class="dynamic" onkeyup="auto_grow(this)"></textarea>
+            </div>
+            <div class="row">
+                <label class="small">What do you do?</label>
+            </div>
+        </div>
+
+        <div class="form-item col-xs-5">
+            <div class="row">
+                <label class="large">INCOME</label>
+            </div>
+            <div class="row">
+                <select name="gender" class="dropdown">
+                    <option value="N/A"> </option>
+                    <option value="40k">Less than $40,000</option>
+                    <option value="60k">$40,000-$60,000</option>
+                    <option value="80k">$60,000-$80,000</option>
+                    <option value="100k">$80,000-$100,000</option>
+                    <option value="125k">$100,000-$125,000</option>
+                    <option value="150k">$125,000-$150,000</option>
+                    <option value="200k">$150,000-$200,000</option>
+                    <option value="250k">$200,000-$250,000</option>
+                    <option value="500k">$250,000-$500,000</option>
+                    <option value="1000k">$500,000-$1000,000</option>
+                    <option value="notsay">Rather not say</option>
+                </select>
+            </div>
+            <div class="row">
+                <label class="small">Why? This is one form of an indicator.</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-item col-xs-5 col-xs-offset-2">
+            <div class="row">
+                <label class="large" style="visibility: hidden">test</label>
+            </div>
+            <div class="row">
+                 <label class="binary-choice not-chosen" id="incomeYes" value="1" >Yes</label>
+                 <label class="binary-choice chosen" id="incomeNo" value="0" >No</label>
+            </div>
+            <div class="row">
+                <label class="small">Is income a factor in your match preferences?</label>
+            </div>
+        </div>
+
+        <div class="form-item col-xs-5">
+            <div class="row">
+                <label class="large" >INTERESTS</label>
+            </div>
+            <div class="row">
+                <textarea type="text" id="interests" class="dynamic" onkeyup="auto_grow(this)"></textarea>
+            </div>
+            <div class="row">
+                <label class="small">Tell us a little more about yourself and what you like to do. We read everything, so please share!</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <label class="next" id="next1">SAVE AND CONTINUE</label>
+    </div>
+    </article>
+    
+    <article class = "article" id="article2">
+        <div class="row">
+            <h2>Tell us about your ideal match</h2>
+            <p>Who would you like to meet? The more we know the better we work.</p>
+        </div>
+        <div class="row">
+            <label class="next" id="next2">SAVE AND CONTINUE</label>
+        </div>
+    </article>
+
+    <article class = "article" id="article3">
+        <div class="row">
+            <h2>Upload recent photos of yourself</h2>
+            <p>We ask that you upload at least 2 photos of yourself, but feel free to upload as many as you'd like. We encourage you to review your photos periodically to make sure they are up to date. Snapshots and selfies are just fine. Remember these photos are for our internal use and will not be shared with potential matches.</p>
+        </div>
+        <div class="row">
+            <input type = "file" name ="file" style="visibility:hidden"/>
+        </div>        
+        <div class="row">
+            <div id="uploads"></div>
+            <div class="dropzone" id="dropzone">Drag and Drop a photo</div>
+
+        </div>
+        <div class="row">
+            <label class="choosefile" id="choosefile" name="choosefile" value="Choose file">CHOOSE FILE</label>
+        </div>
+        <div class="row">
+            <p>Your pictures must be 4 megabytes or smaller. If you have problems, please contact us1l 1 (646) 791-3283</p>
+        </div>
+        <div class="row" style="visibility:hidden">fdsa</div>
+        <div class="row">
+            <input class="next" id="next3" name="submit" type="submit" value="save and continue"/>
+        </div>
+    </article>
+</form>
+<script type="text/javascript">
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight)+"px";
+    }
+    $(function(){
+        $("#heightYes").click( function(){
+            $(this).removeClass("not-chosen");
+            $(this).addClass("chosen");
+            $("#heightNo").removeClass("chosen");
+            $("#heightNo").addClass("not-chosen");
+        });
+    });
+    $(function(){
+        $("#heightNo").click( function(){
+            $(this).removeClass("not-chosen");
+            $(this).addClass("chosen");
+            $("#heightYes").removeClass("chosen");
+            $("#heightYes").addClass("not-chosen");
+      });
+    });
+    $(function(){
+        $("#incomeYes").click( function(){
+            $(this).removeClass("not-chosen");
+            $(this).addClass("chosen");
+            $("#incomeNo").removeClass("chosen");
+            $("#incomeNo").addClass("not-chosen");
+        });
+    });
+    $(function(){
+        $("#incomeNo").click( function(){
+            $(this).removeClass("not-chosen");
+            $(this).addClass("chosen");
+            $("#incomeYes").removeClass("chosen");
+            $("#incomeYes").addClass("not-chosen");
+      });
+    });
+    //hide every form section except first
+    $("article:nth-child(1n+2)").hide();
+    //add class of visible to first screen
+    $("article:first").addClass("visible");  
+
+
+    $("#li1").on("click", function(e){
+        e.preventDefault();
+        $("#article2").removeClass("visible").hide();
+        $("#article3").removeClass("visible").hide();
+        $("#article1").addClass("visible").fadeIn();
+        //remove active state of pagination
+        $("#li1").addClass("active");
+        $("#li2").removeClass("active");
+        $("#li3").removeClass("active");
+    });
+
+    $("#li2").on("click", function(e){
+        e.preventDefault();
+        $("#article1").removeClass("visible").hide();
+        $("#article3").removeClass("visible").hide();
+        $("#article2").addClass("visible").fadeIn();
+        //remove active state of pagination
+        $("#li2").addClass("active");
+        $("#li1").removeClass("active");
+        $("#li3").removeClass("active");
+    });
+
+    $("#li3").on("click", function(e){
+        e.preventDefault();
+        $("#article1").removeClass("visible").hide();
+        $("#article2").removeClass("visible").hide();
+        $("#article3").addClass("visible").fadeIn();
+        //remove active state of pagination
+        $("#li3").addClass("active");
+        $("#li1").removeClass("active");
+        $("#li2").removeClass("active");
+    });
+
+    //every time the next button is clicked, remove the current panels class of visible and apply it to the next and fade it in.
+    $("#next1").on("click", function(e){
+        e.preventDefault();
+        $("#article1").removeClass("visible").hide();
+        $("#article2").addClass("visible").fadeIn();
+        $("#li2").addClass("active");
+        $("#li1").removeClass("active");
+        $("#li3").removeClass("active");
+    });
+    $("#next2").on("click", function(e){
+        e.preventDefault();
+        $("#article2").removeClass("visible").hide();
+        $("#article3").addClass("visible").fadeIn();
+        $("#li3").addClass("active");
+        $("#li1").removeClass("active");
+        $("#li2").removeClass("active");
+    });
+</script>       
+</body>
+</html>
